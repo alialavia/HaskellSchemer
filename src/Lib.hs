@@ -23,9 +23,9 @@ symbol = oneOf "!#$%&|*+-/:<=>?@^_~"
 
 parseString :: Parser LispVal
 parseString = do
-                char '"'
+                _ <- char '"'
                 x <- many (noneOf "\"")
-                char '"'
+                _ <- char '"'
                 return $ String x
 
 
